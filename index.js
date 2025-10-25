@@ -1,0 +1,129 @@
+// <--------------- WHILE LOOP ------------>
+// var i = 0;
+// while (i < document.querySelectorAll(".drum").length) {
+//   document
+//     .querySelectorAll(".drum")
+//     [i].addEventListener("click", () => alert("I am Clicked!"));
+//   i++;
+// }
+
+// <--------------- FOR LOOP ------------>
+
+for (var i = 0; i < document.querySelectorAll(".drum").length; i++) {
+  document.querySelectorAll(".drum")[i].addEventListener("click", function () {
+    check(this.innerHTML);
+    buttonAnimation(this.innerHTML);
+  });
+}
+document.addEventListener("keydown", (event) => {
+  check(event.key);
+  buttonAnimation(event.key);
+});
+function check(key) {
+  switch (key) {
+    case "w":
+      new Audio("./sounds/tom-1.mp3").play();
+      break;
+    case "a":
+      new Audio("./sounds/tom-2.mp3").play();
+      break;
+    case "s":
+      new Audio("./sounds/tom-3.mp3").play();
+      break;
+    case "d":
+      new Audio("./sounds/tom-4.mp3").play();
+      break;
+    case "j":
+      new Audio("./sounds/snare.mp3").play();
+      break;
+    case "k":
+      new Audio("./sounds/kick-bass.mp3").play();
+      break;
+    case "l":
+      new Audio("./sounds/crash.mp3").play();
+      break;
+
+    default:
+      console.log(innerHTML);
+
+      break;
+  }
+}
+function buttonAnimation(currentkey) {
+  var keyWait = document.querySelector("." + currentkey).classList;
+  keyWait.add("pressed");
+  setTimeout(() => keyWait.remove("pressed"), 100);
+}
+
+// Regular Function () {this}
+// Arrow Function ()=> event
+// document.querySelectorAll(".drum")[i].addEventListener("click", (event)=>
+//     event.target.style.color = "white")
+
+// var audio = new Audio;
+// audio.play();
+
+// <----------- SWITCH-CASE ----------->
+// switch (this.innerHTML) {
+//       case "w":
+//         new Audio("./sounds/tom-1.mp3").play();
+//         break;
+//       case "a":
+//         new Audio("./sounds/tom-2.mp3").play();
+//         break;
+//       case "s":
+//         new Audio("./sounds/tom-3.mp3").play();
+//         break;
+//       case "d":
+//         new Audio("./sounds/tom-4.mp3").play();
+//         break;
+//       case "j":
+//         new Audio("./sounds/snare.mp3").play();
+//         break;
+//       case "k":
+//         new Audio("./sounds/kick-bass.mp3").play();
+//         break;
+//       case "l":
+//         new Audio("./sounds/crash.mp3").play();
+//         break;
+
+//       default:
+//         break;
+//     }
+
+// ----------------------------------------------------------------------------
+// this.style.color = "white";
+
+// switch (this.innerHTML) {
+//   case "w":
+//     var tom1 = new Audio("./sounds/tom-1.mp3");
+//     tom1.play();
+//     break;
+//   case "a":
+//     var tom2 = new Audio("./sounds/tom-2.mp3");
+//     tom2.play();
+//     break;
+//   case "s":
+//     var tom3 = new Audio("./sounds/tom-3.mp3");
+//     tom3.play();
+//     break;
+//   case "d":
+//     var tom4 = new Audio("./sounds/tom-4.mp3");
+//     tom4.play();
+//     break;
+//   case "j":
+//     var snare = new Audio("./sounds/snare.mp3");
+//     snare.play();
+//     break;
+//   case "k":
+//     var kick = new Audio("./sounds/kick-bass.mp3");
+//     kick.play();
+//     break;
+//   case "l":
+//     var crash = new Audio("./sounds/crash.mp3");
+//     crash.play();
+//     break;
+
+//   default:
+//     console.log(this.innerHTML);
+// }
